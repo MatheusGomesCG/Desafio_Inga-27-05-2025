@@ -11,8 +11,6 @@ namespace Exercicio_04.Models
         public int Quantidade { get; set; }
         public decimal PrecoUnitario { get; set; }
 
-        
-
         public ItemPedido()
         {
 
