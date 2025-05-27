@@ -35,7 +35,9 @@ namespace Exercicio_02.Models
             if (funcionarios.Any(x => x.Id == id))
             {
                 var funcionarioPromovido = funcionarios.Find(x => x.Id == id);
+                Console.WriteLine($"Salário anterior: {funcionarioPromovido.Salario:C}");
                 funcionarioPromovido.Salario *= 1 + (percentual / 100.00M);
+                Console.WriteLine($"Salário posterior: {funcionarioPromovido.Salario:C}");
                 return true;
             }
             return false;
