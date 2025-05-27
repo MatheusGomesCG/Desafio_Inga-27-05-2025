@@ -7,7 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        ItemPedido p = new ItemPedido();
+        Pedido p = new Pedido();
 
         bool exit = false;
 
@@ -36,7 +36,7 @@ class Program
                     decimal priceProduct = IsValidDecimal(Console.ReadLine());
 
                     ItemPedido itemPedido = new ItemPedido(nameProduct, quantity, priceProduct);
-                    itemPedido.AdicionarPedido(itemPedido);
+                    p.AdicionarPedido(itemPedido);
 
                     Console.WriteLine("Produto cadastrado com sucesso!!!");
                     Console.WriteLine("Pressione qualquer tecla para voltar ao menu");
