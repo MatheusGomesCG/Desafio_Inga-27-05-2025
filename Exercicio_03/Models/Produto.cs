@@ -24,6 +24,10 @@ namespace Exercicio_03.Models
             Nome = nome;
             Preco = preco;
         }
+        static public bool IsValidoCodigo(int codigo)
+        {
+            return produtos.Any(x => x.Codigo == codigo);
+        }
 
         public void Adicionar(Produto p)
         {
@@ -31,9 +35,10 @@ namespace Exercicio_03.Models
         }
         public bool Remover(int codigo)
         {
-            if (produtos.Any(x => x.Codigo == codigo))
+
+            var produtoRemover = produtos.Find(x => x.Codigo == codigo);
+            if (produtoRemover != null)
             {
-                var produtoRemover = produtos.Find(x => x.Codigo == codigo);
                 produtos.Remove(produtoRemover);
                 return true;
             }

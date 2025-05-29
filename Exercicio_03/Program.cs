@@ -30,6 +30,14 @@ class Program
                     Console.WriteLine("==== MENU ADICIONAR TAREFA ====");
                     Console.Write("Adicione o código do produto: ");
                     int codigo = IsValidInt(Console.ReadLine());
+                    bool codigoValido = Produto.IsValidoCodigo(codigo);
+
+                    while (codigoValido)
+                    {
+                        Console.Write("Código já cadastrado, digite outro código: ");
+                        codigo = IsValidInt(Console.ReadLine());
+                        codigoValido = Produto.IsValidoCodigo(codigo);
+                    }
 
                     Console.Write("Adicione o nome do produto: ");
                     string nome = Console.ReadLine();
